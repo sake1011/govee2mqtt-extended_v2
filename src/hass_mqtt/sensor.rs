@@ -208,7 +208,7 @@ impl EntityInstance for CapabilitySensor {
                         .state
                         .pointer("/value")
                         .and_then(|v| v.as_f64())
-                        .map(|v| units.reading_to_relative_percent(v))
+                        .map(|v| units.from_reading_to_relative_percent(v))
                     {
                         Some(v) => format!("{v:.2}"),
                         None => "".to_string(),
